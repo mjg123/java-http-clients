@@ -26,11 +26,11 @@ public class RetrofitDemo {
 
         APODClient apodClient = retrofit.create(APODClient.class);
 
-        CompletableFuture<APOD> demo_key = apodClient.getApod("DEMO_KEY");
+        CompletableFuture<APOD> response = apodClient.getApod("DEMO_KEY");
 
         // do other stuff here while the request is in-flight
 
-        APOD apod = demo_key.get();
+        APOD apod = response.get();
 
         System.out.println(apod.title);
 
